@@ -1,0 +1,189 @@
+body {
+  overflow: hidden;
+}
+
+#map-canvas {
+  min-height: 850px;
+  width: 98%;
+  height: auto;
+  margin: 0 0 0 10px;
+  overflow: hidden;
+}
+
+.status-sinal {
+  padding: 15px;
+  cursor: help;
+}
+
+#historico {
+  height: auto;
+  position: fixed;
+  background-color: transparent;
+  bottom: 0;
+  margin-left: 15px;
+  padding: 0 10px 0 0;
+  color: #000;
+}
+
+#historico .header {
+  width: 150px;
+  height: 40px;
+  display: block;
+  cursor: pointer;
+  color: #999;
+  padding: 7px 0 5px 0;
+  margin: 0 auto;
+  -webkit-border-radius: 20px 20px 0 0;
+  -moz-border-radius: 20px 20px 0 0;
+  border-radius: 20px 20px 0 0;
+}
+
+#historico .clear-trace {
+  float: right;
+  display: block;
+  width: auto;
+  height: auto;
+  margin-right: 40px;
+}
+
+#historico .content {
+  min-height: 50px;
+  max-height: 300px;
+  overflow-y: scroll;
+  display: block;
+  background-color: #E4E4E4;
+  -webkit-box-shadow: 0 1px 50px #272822;
+  -moz-box-shadow: 0 1px 50px #272822;
+  box-shadow: 0 1px 50px #272822;
+}
+
+#close-street {
+    margin-right: 10px;
+}
+
+#mapa-cerca {
+  display: block;
+  width: 100%;
+  height: 450px;
+  margin: 10px 0 0 0;
+}
+
+#form-cerca {
+  padding: 10px 0 5px 0;
+}
+
+.cerca-dropdown span:hover {
+  cursor: pointer;
+}
+
+#loader-cerca {
+  display: block;
+  position: absolute;
+  top: 55%;
+  left: 35%;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+ul.side-nav .logo { margin-left: 20px; }
+
+input.error {
+  border-color: #A94442;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: all ease-in-out .15s;
+  -moz-transition: all ease-in-out .15s;
+  -ms-transition: all ease-in-out .15s;
+  -o-transition: all ease-in-out .15s;
+  transition: all ease-in-out .15s;
+}
+
+input.error:focus {
+  border-color: #843534;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+}
+
+label.error {
+  font-weight: normal;
+  font-size: 12px;
+  color: #CE0000;
+}
+
+#slide-panel {
+  position: absolute;
+  top: 15%;
+  right: 0;
+  z-index: 2;
+  float: right;
+  width:300px;
+  height:auto;
+  padding:0px 10px 5px 10px;
+  background:#fff;
+  margin-right:-300px;
+}
+
+#opener {
+  float:left;
+  margin:0px 0px 0px -60px;
+  outline: none;
+  border: none;
+  border-radius:0;
+}
+
+#directionsPanel {
+  height: 450px;
+  overflow-y: scroll;
+  margin-top: -40px;
+}
+
+.bordatable {
+	color: #333;
+}
+.bordatable {
+	width: 98%;
+	background-color: #809af1;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 10px;
+	color: #FFF;
+}
+.textodescricao {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 10px;
+	color: #003399;
+	text-decoration: none;
+	font-weight: bold;
+}
+textodados {
+	font-family: Verdana, Geneva, sans-serif;
+}
+.titulo {
+	color: #FFF;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 10px;
+	text-align: center;
+}
+.linkAddress:active{
+	color: #000;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 10px;
+	text-align: center;
+}
+.labels {
+	font-family: Arial;
+ 	color: #000000;
+ 	font-size: 9px;
+ 	text-align: left;
+ 	font-weight:bold;
+ 	width: 80px;
+}
+#logo{
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:30px;
+}

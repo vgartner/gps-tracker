@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="map-canvas"></div>
+  </body>
+</html>
+<script>
+var count = 0;
+var countmarker = 0;
+var arrLength = 0;
+var from = 0;
+var to   = 0;
+var map;
+var markerBounds = new google.maps.LatLngBounds();
+var randomPoint, i
+var path;
+	
+//Buscar dados do banco
+opcao = " query="+
+		"select * "+
+		"  from gprmc "+
+		" where imei = '358899051381880' "+
+		"   and date between '2014-12-17 00:06' and '2014-12-18 00:30'"+
+		" order by date ";
+   
+
+$.ajax({
+	type: "GET",  
+	url: "http://128.199.163.160/services.php",
+	dataType:"text", 
+	data:opcao, 
+	async:false,
+	success:function(response){
+		//console.log(response);
+		var dados = $.parseJSON(response); 
+		firstPoint(dados[0].latitudeDecimalDegrees, dados[0].longitudeDecimalDegrees);
+		setDataMap(dados);
+	},
+	error:function (xhr, ajaxOptions, thrownError){
+		alert(thrownError);
+	}
+});
+
+
+function setDataMap(arr)
+{
+	console.log(arr.length);
+	arrLength = arr.length;	
+	window.setInterval(function (){writeMap(arr)},500);
+}
+
+function writeMap(rowArr)	
+{
+	if (count < arrLength)	{				
+		if (count > 1 )
+		{
+			from = new google.maps.LatLng(rowArr[count-1].latitudeDecimalDegrees, rowArr[count-1].longitudeDecimalDegrees);
+			to   = new google.maps.LatLng(rowArr[count].latitudeDecimalDegrees, rowArr[count].longitudeDecimalDegrees);
+			
+			if (rowArr[count-1].latitudeDecimalDegrees != rowArr[count].latitudeDecimalDegrees)
+			{		
+				countmarker++;
+				if (countmarker<10)
+				{
+					pin = 'http://google-maps-icons.googlecode.com/files/black0'+countmarker+'.png';
+				}
+				else
+				{
+					pin = 'http://google-maps-icons.googlecode.com/files/black'+countmarker+'.png';
+				}
+				
+				path.push(to);
+				 
+				var marker = new google.maps.Marker({
+					position: to,
+					draggable: false,
+					animation: google.maps.Animation.DROP,
+					title: '#' + path.getLength(),
+					icon: pin,
+					label:'uai',
+					map: map					
+				});
+				
+				var contentString = 
+				'<table width="100%" border="0" cellpadding="3" cellspacing="2" bgcolor="#f4f4f4"> '+
+				' <tr> '+
+				'  <td colspan="2" align="center" class="titulos" bgcolor="#CCCCCC">Informações sobre a posição</td> '+
+				' </tr> '+
+				' <tr> '+
+				'  <td width="8%" class="titulos">Data / Hora</td> '+
+				'  <td width="86%">&nbsp;</td> '+
+				' </tr> '+
+				' <tr> '+
+				'  <td class="titulos">Posição:</td> '+
+				'  <td>&nbsp;</td> '+
+				' </tr> '+
+				' <tr> '+
+				'  <td class="titulos">Velocidade:</td> '+
+				'  <td class="tbInformacoes">&nbsp;</td> '+
+				' </tr> '+
+				' <tr> '+
+				'  <td class="titulos">Endereço:</td> '+
+				'  <td class="tbInformacoes">&nbsp;</td> '+
+				' </tr> '+
+				'</table> ';
+			
+				var infowindow = new google.maps.InfoWindow({
+					content: contentString
+			  	});
+			
+				google.maps.event.addListener(marker, 'click', function() {
+					infowindow.open(map,marker);
+				});
+
+				map.panTo(to);
+			}
+		}	
+		count++;
+	}
+}
+   
+function firstPoint(lat,long)
+{
+	var mapOptions = {
+		zoom: 19,
+		center: new google.maps.LatLng(lat, long)
+	};
+	map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+	
+	var marker = new google.maps.Marker({
+		map: map,
+		position: new google.maps.LatLng(lat, long),
+		title:"Hello World!"
+	});
+	var polyOptions = {
+		strokeColor: '#000000',
+		strokeOpacity: 1.0,
+		strokeWeight: 1
+	};
+	poly = new google.maps.Polyline(polyOptions);
+	poly.setMap(map);
+	
+	path = poly.getPath();
+
+
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

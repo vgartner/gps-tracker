@@ -1,0 +1,229 @@
+﻿@charset "utf-8";
+
+
+/*HELPERS*/
+.m-top-10 {
+	margin-top:10px;
+}
+
+
+
+/*fim HELPERS*/
+
+
+
+body.login-screen {
+  background: #67b0d1;
+	height:auto;
+}
+
+body.login-screen #output {
+	top:300px;
+}
+
+
+a, a:visited {
+	color:#67b0d1;
+}
+
+a:hover, a:focus {
+	color:#FF8080;
+}
+
+a.white-link {
+	color:white;
+}
+
+#wrapper {
+	background:white;
+	padding-left:0;
+}
+
+img.loading {
+	position: absolute;
+	top:50%;
+	right:50%;
+	margin-right:-25px;
+	margin-top:-33px;
+}
+
+body.config-btn-opened #wrapper {
+	padding-left:225px;
+}
+
+.side-nav {
+	background:white;
+	top:51px;
+	-moz-box-shadow: rgba(0,0,0,.1)0 1px 4px 1px;
+	-webkit-box-shadow: rgba(0,0,0,.1)0 1px 4px 1px;
+	box-shadow: rgba(0,0,0,.1)0 1px 4px 1px;
+	left:-10px;
+}
+
+	.side-nav li a:focus {
+		background:none !important;
+	}
+
+body.config-btn-opened .side-nav {
+	left:225px;
+}
+
+.side-nav > li > a {
+	color:grey !important;
+}
+
+img.logo-cloud-service {
+	position: fixed;
+	width: 110px;
+  height: auto;
+  top: 9px;
+  left: 12px;
+  z-index: 1120;
+}
+
+.login-screen div.logo-area {
+	margin-top:10%;
+}
+
+.login-screen .login-container {
+	border:none;
+	margin-bottom: 100px;
+	border-radius: 10px;
+	-moz-box-shadow: rgba(0,0,0,.1)0 1px 4px 1px;
+	-webkit-box-shadow: rgba(0,0,0,.1)0 1px 4px 1px;
+	box-shadow: rgba(0,0,0,.1)0 1px 4px 1px;
+}
+
+.navbar {
+  -moz-box-shadow: rgba(0,0,0,.1)0 1px 4px 1px;
+  -webkit-box-shadow: rgba(0,0,0,.1)0 1px 4px 1px;
+  box-shadow: rgba(0,0,0,.1)0 1px 4px 1px;
+	background: #67b0d1;
+	border-color:white;
+}
+
+	.navbar a {
+		color:white !important;
+	}
+
+	.navbar-nav a:hover, .navbar-nav .open a {
+		background: rgba(255, 255, 255, 0.7) !important;
+		color:#67b0d1 !important;
+	}
+
+.btn, .btn:visited {
+	background: #67b0d1;
+	border-color: white !important;
+}
+
+.btn:hover, .btn:active, .btn:focus {
+	background:#FF8080 !important;
+}
+
+.btn[disabled] {
+	background: #67b0d1;
+}
+
+.btn-default, .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default:visited {
+	color:white;
+}
+
+
+.config-btn {
+	position:  fixed;
+	bottom:20px;
+	left:20px;
+	z-index: 999;
+	color:white;
+
+	width: 70px;
+	height: 70px;
+	text-align: center;
+	padding: 0;
+	font-size: 46px;
+	line-height: 1.42;
+	border-radius: 45px;
+	border:none;
+
+	-moz-box-shadow: rgba(0,0,0,.1)0 1px 4px 1px;
+  -webkit-box-shadow: rgba(0,0,0,.1)0 1px 4px 1px;
+  box-shadow: rgba(0,0,0,.1)0 1px 4px 1px;
+	opacity:0.7;
+
+	transition: all .2s ease-in-out;
+}
+
+.config-btn:hover {
+	opacity:1;
+	color:white !important;
+	transform: scale(1.1);
+	background: #67b0d1 !important;
+}
+
+
+
+.config-btn:visited, .config-btn:active, .config-btn:focus {
+	color:white !important;
+	background: #67b0d1 !important;
+}
+
+body.config-btn-opened .config-btn {
+	left:240px;
+}
+
+#historico {
+	left:8%;
+	bottom:-300px;
+	transition: bottom .2s ease-in-out;
+}
+
+#historico.opened {
+	bottom:0;
+}
+
+#historico .header {
+	background:#67b0d1;
+	color:white;
+}
+
+	#historico .content {
+		border-radius: 10px 0 10px 0;
+	}
+
+
+#map-canvas {
+	/*width:100%;
+	margin:0;*/
+	transform: none !important;
+	position: inherit !important;
+
+	-webkit-box-flex: 100%;
+	-moz-box-flex: 100%;
+	-webkit-flex: 100%;
+	-ms-flex: 100%;
+	flex: 100%;
+	-webkit-align-self: stretch;
+	-ms-flex-item-align: stretch;
+	align-self: stretch;
+	background: white !important;
+}
+
+
+@media (max-width: 990px) and (min-width: 767px) {
+	ul.navbar-user a span {
+		display:none;
+	}
+}
+
+@media (max-width: 767px) {
+	.config-btn {
+		display:none;
+	}
+
+	#historico {
+		left:0;
+		margin-left:5px;
+
+	}
+
+}

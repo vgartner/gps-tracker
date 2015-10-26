@@ -1,0 +1,58 @@
+body {
+	background: #fff;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:8pt;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-left: -5px;
+	margin-right: -3px;	
+	margin-top:-10px;
+	font-size: 1.1em;
+}
+
+th {
+	background: #cdaf95;
+	color: #fff;
+	font-weight: bold;
+	padding: 4px 11px;
+	text-align: left;
+	border-right: 1px solid #fff;
+	line-height: 1.2;
+}
+td {
+	padding: 3px 11px;
+	border-bottom: 1px solid #95bce2;
+	vertical-align: top;
+	border-bottom-color: #FFD0A6;
+}
+
+td * {
+	padding: 6px 11px;
+}
+
+tr.alt td {
+	background: #ffefd5;
+}
+tr.over td {
+	background: #FFE1C6;
+}
+
+.botaoBranco {
+	background-color:#FFFFFF;
+	border:1px solid #999999;
+	color:#333333;
+	font-family:Verdana;
+	font-size:7pt;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	padding:1px;
+}
+
+.styleCheck {
+	padding: 0px;
+	text-align:center
+}

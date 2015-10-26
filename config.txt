@@ -1,0 +1,34 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; [LAYOUT]
+;
+; Caminho do logo da tela  de login
+; As dimensões recomendadas são 450x150
+logo_login	= imagens/logo_login.png
+
+; Caminho da logo que será exibida no painel administrativo
+; As dimensões recomendadas são 250x90
+logo_admin	= imagens/logo_header.png
+
+; Nome da empresa
+empresa		= NOMEFANTASIA
+
+; Conteúdo  do rodapé
+rodape		= NOMEFANTASIA &copy; 2014. Todos os Direitos Reservados.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; [EMAIL]
+;
+; Endereço do servidor SMTP (Ex.: smtp.gmail.com)
+host_smtp	= smtp.ig.com.br
+
+; Autenticação SMTP?
+; true / false
+autent_smtp	= true
+
+; Usuário do servidor SMTP
+usuario_smtp	= webota@ig.com.br
+
+; Senha do servidor SMTP
+senha_smtp	= fenomenos
