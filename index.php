@@ -5,6 +5,7 @@
 
     <body class="login-screen">
       <div class="col-xs-12 text-center logo-area">
+        teste
         <img alt="CloudService.io" src="imagens/cloud2.png" />
       </div>
 
