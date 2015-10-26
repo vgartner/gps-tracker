@@ -1,2 +1,3 @@
 FROM richarvey/nginx-php-fpm
-COPY . /usr/share/nginx/html
+CMD rm -rf /usr/share/nginx/html
+ADD . /usr/share/nginx/html
