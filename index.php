@@ -7,7 +7,7 @@
       <div class="col-xs-12 text-center logo-area">
         <img alt="CloudService.io" src="imagens/cloud2.png" />
       </div>
-      x510
+      x550
         <div class="container">
             <div class="login-container col-xs-12 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
                 <div id="output" class="col-xs-12">
