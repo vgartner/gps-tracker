@@ -56,6 +56,7 @@
     </button>
 
     <img class="loading" alt="Carregando..." src="imagens/gif-load.gif" />
+    teste
     <img class="logo-cloud-service" alt="CloudService.io" src="imagens/cloud2.png" />
 
     <!-- Sidebar -->
